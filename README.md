@@ -5,19 +5,13 @@ loan amount, borrower rate (or interest rate), current loan status,
 borrower income, borrower employment status, borrower credit history, 
 and the latest payment information.
 
-I truly wanted to understand in my analysis which party benefits most in which
-situtations from prosper loans: Prosper, Investor or Borrower? How easy is it
-for an investor to truly loose all there money on a prosper loan? What loans
-are the most likely to make an investor a large return? I also want to
-understand how specific credit ratings and scores relate to borrowers 
-characteristics. I hope I can provide you with some interesting insights 
-into the world of prosper loans by the end of this analysis.
+I wanted to visualize in my analysis the difference between the average Prosper loans EstimatedReturn vs. ActualReturn
+on loans for each ProsperRating yearly. I also wanted to display the amount of loans for each group.
 
 ##Description of Files
-* Final_Project.html is the final knitted analysis
-* Final_Project.Rmd is the code for my R studio analysis
-* Prosper_Loan_Data_Variable_Definitions.xlsx give a description of each variable
-* prosperLoanData.csv is the data set file
+*Prosper_loans_Returns_1.html is the actual visualization
+*Prosper_Loans_Actual_Return.csv is the data file
+
 
 ##References:
 http://dimplejs.org/advanced_examples_viewer.html?id=advanced_storyboard_control
