@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <div id="chartContainer">
-  <script src="/lib/d3.v4.3.0.js"></script>
+  <script src="http://d3js.org/d3.v4.min.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
   <script type="text/javascript">
       var svg = dimple.newSvg("#chartContainer", 590, 400);
-      d3.csv("Prosper_Loans_Actual_Return.csv", function (data) {
+      d3.csv("Prosper_Loans_Actual_Return.csv", function (data) { 
 
           // Filter for 1 year
           data = dimple.filterData(data, "ListingCreationDateYear", [
