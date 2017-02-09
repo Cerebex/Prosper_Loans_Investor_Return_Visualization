@@ -9,8 +9,8 @@ I wanted to visualize in my analysis the difference between the average Prosper 
 on loans for each ProsperRating yearly. I also wanted to display the amount of loans for each group.
 
 ##Description of Files
-*Prosper_loans_Returns_1.html is the actual visualization
-*Prosper_Loans_Actual_Return.csv is the data file
+* Prosper_loans_Returns_1.html is the actual visualization
+* Prosper_Loans_Actual_Return.csv is the data file
 
 
 ##References:
