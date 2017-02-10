@@ -5,11 +5,12 @@
   <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
   <script type="text/javascript">
       var svg = dimple.newSvg("#chartContainer", 590, 400);
-      d3.csv("Prosper_Loans_Actual_Return.csv", function (data) { 
+      d3.csv("Prosper_Loans_Actual_Return_2.csv", function (data) { 
 
-          // Filter for 1 year
+          debugger;
+          // Filter for years
           data = dimple.filterData(data, "ListingCreationDateYear", [
-              "2009", "2010", "2011", "2012", "2013", "2014",
+              "2009", "2010", "2011", "2012", "2013"
           ]);
 
           // Create the indicator chart on the right of the main chart
@@ -29,14 +30,17 @@
 
           // Add dates along the y axis
           var y = indicator.addCategoryAxis("y", "ListingCreationDateYear");
-          y.addOrderRule("Date", "Desc");
+          y.addOrderRule("Date");
 
           // Use sales for bar size and hide the axis
-          var x = 20
+          var x = indicator.addMeasureAxis("x", "Total_Amount_of_Loans");
+          x.hidden = true;
 
           // Add the bars to the indicator and add event handlers
           var s = indicator.addSeries(null, dimple.plot.bar);
+          
           s.addEventHandler("click", onClick);
+          debugger;
           // Draw the side chart
           indicator.draw();
 
@@ -79,9 +83,10 @@
           // Draw the main chart
           var bubbles = new dimple.chart(svg, data);
           bubbles.setBounds(60, 50, 355, 310)
-          bubbles.addMeasureAxis("x", "EstimatedReturn");
-          bubbles.addMeasureAxis("y", "ActualReturn");
-          bubbles.addSeries(["ProsperScore"], dimple.plot.bubble)
+          bubbles.addMeasureAxis("x", "Median_Estimated_Return");
+          bubbles.addMeasureAxis("y", "Median_Actual_Return");
+          bubbles.addMeasureAxis("z", "Total_Amount_of_Loans")
+          bubbles.addSeries("ProsperRating.Alpha", dimple.plot.bubble)
           bubbles.addLegend(60, 10, 410, 60);
 
           // Add a storyboard to the main chart and set the tick event
