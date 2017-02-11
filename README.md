@@ -1,5 +1,7 @@
 # Prosper-Loan-Data-Analysis
 
+##Summary:
+
 In this project I reviewed a Prosper Loan data set containing 113,937 loans with 81 variables on each loan, including 
 loan amount, borrower rate (or interest rate), current loan status, 
 borrower income, borrower employment status, borrower credit history, 
@@ -8,13 +10,15 @@ and the latest payment information.
 I wanted to visualize in my analysis the difference between the average Prosper loans EstimatedReturn vs. ActualReturn
 on loans for each ProsperRating yearly. I also wanted to display the amount of loans for each group.
 
-##Description of Files
-* Prosper_loans_Returns_1.html is the actual visualization
-* Prosper_Loans_Actual_Return.csv is the data file
 
-
-##References:
+##Resources:
 http://dimplejs.org/advanced_examples_viewer.html?id=advanced_storyboard_control
+
+https://github.com/PMSI-AlignAlytics/dimple/blob/master/src/objects/axis/methods/addGroupOrderRule.js
+
+https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple#filterData
+
+https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#addOrderRule
 
 https://www.fool.com/knowledge-center/annualized-return-vs-cumulative-return.aspx
 
