@@ -1,0 +1,51 @@
+---
+title: "Sam Miller's Prosper Loan Data Wrangling"
+output: html_document
+---
+This data set contains 113,937 loans with 81 variables on each loan, including 
+loan amount, borrower rate (or interest rate), current loan status, 
+borrower income, borrower employment status, borrower credit history, 
+and the latest payment information.
+
+I use this R file to wrangle the original data set (prosperLoanData.csv) into the values needed for my dimple.js/d3.js visualization
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,message=FALSE, warning=FALSE)
+```
+
+```{r, include = FALSE}
+setwd(paste("/Users/samuelmiller/Documents/Udacity/Data\ Analyst\ Nanodegree/Data\ Visualization\ with\ D3/Final\ Project", sep=""))
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(lubridate)
+library(gridExtra)
+library(pander)
+```
+
+```{r}
+Loans <- read.csv('prosperLoanData.csv', header = T, check.names = F, 
+                  na.strings=c(""," ","NA"))
+```
+
+```{r}
+Loans_Actual_Return <- Loans %>%
+                          mutate(Rc_Complete = (LP_CustomerPayments - LoanOriginalAmount - LP_ServiceFees)/LoanOriginalAmount)%>%
+                          mutate(Rc_Incomplete = (LP_CustomerPayments + LP_NonPrincipalRecoverypayments - LP_ServiceFees - LP_CollectionFees - LoanOriginalAmount - LP_NetPrincipalLoss)/LoanOriginalAmount)%>%
+                          mutate(Ra_Complete = (((1+Rc_Complete)^(12))^(1/LoanMonthsSinceOrigination))-1)%>%
+                          mutate(Ra_Incomplete = (((1+Rc_Incomplete)^(12))^(1/LoanMonthsSinceOrigination))-1)%>%
+                          filter(EstimatedReturn != "NA")%>%
+                          filter(ClosedDate != "NA")%>%
+                          mutate(ActualReturn = ifelse( LoanStatus == "Chargedoff" | LoanStatus == "Defaulted", Ra_Incomplete, ifelse( LoanStatus == "Completed", Ra_Complete, NA)))
+
+Loans$ListingCreationDateYear <- year(Loans$ListingCreationDate)
+Loans_Actual_Return$LoanOriginationDateYear <- year(Loans_Actual_Return$LoanOriginationDate)
+
+Loans_Actual_Return_Grouped <- Loans_Actual_Return%>%
+                                    group_by(ListingCreationDateYear, ProsperRating.Alpha)%>%
+                                    summarise(Total_Amount_of_Loans = n(), Median_Estimated_Return = median(EstimatedReturn), Median_Actual_Return = median(ActualReturn))
+
+write.csv(Loans_Actual_Return_Grouped, "Prosper_Loans_Actual_Return_2.csv")
+```
