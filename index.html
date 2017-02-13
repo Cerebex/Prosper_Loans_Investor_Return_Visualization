@@ -3,10 +3,21 @@
 <div id="chartContainer">
   <script src="http://d3js.org/d3.v4.min.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
-  <script type="text/javascript">
-      var svg = dimple.newSvg("#chartContainer", 590, 400);
-      d3.csv("Prosper_Loans_Actual_Return_2.csv", function (data) { 
 
+  <style>
+    h3 {
+      text-align: center;
+    }
+  </style>
+
+	<script type="text/javascript">
+		d3.select('#chartContainer')
+            	.append('h3')
+            	.text("Yearly Median Actual Return Vs. Median Prosper Loans Estimated Return for each Prosper Rating");
+
+      	var svg = dimple.newSvg("#chartContainer", 590, 400);
+      	d3.csv("Prosper_Loans_Actual_Return_2.csv", function (data) { 
+      		
           debugger;
           // Filter for years
           data = dimple.filterData(data, "ListingCreationDateYear", [
