@@ -1,4 +1,4 @@
-# Prosper-Loan-Data-Analysis
+# Prosper-Loan-Data-Analysis-Visualization
 
 ##Summary:
 
@@ -7,8 +7,9 @@ loan amount, borrower rate (or interest rate), current loan status,
 borrower income, borrower employment status, borrower credit history, 
 and the latest payment information.
 
-I wanted to visualize in my analysis the difference between the average Prosper loans EstimatedReturn vs. ActualReturn
-on loans for each ProsperRating yearly. I also wanted to display the amount of loans for each group.
+I wanted to visualize in my analysis the difference between the median Prosper loans Estimated Return vs. my 
+calculated Actual Return on loans for each ProsperRating yearly. 
+I also wanted to display the amount of loans that were granted for each group.
 
 ##Design:
 
@@ -38,6 +39,11 @@ Review #2 Design Changes:
 * Added open line before "Bar size equates to total yearly loans" in legend title
 * Deleted "Above 1:1 dashed line" and "Below 1:1 dashed line"
 
+Review #3 Design Changes:
+* Changed font to bold for wording inside the graph to emphasize its presence
+* Change the footnote to empahsize data is being excluded
+* Slowed the animation to allow the eyes to understand the change
+
 
 
 ##Feedback:
@@ -59,25 +65,31 @@ Review #2 Feedback:
 * Change so starts from top to bottom 2009 - 2013
 * Delete "Above 1:1 dashed line" and "Below 1:1 dashed line"
 
+Review #3 Feedback:
+* Please bold the wording inside the graph to emphasize its presence
+* Change the footnote to empahsize data is being excluded
+* Slow the animation to allow the eyes to understand the change
+
 
 
 ##Resources:
-http://dimplejs.org/advanced_examples_viewer.html?id=advanced_storyboard_control
 
-https://github.com/PMSI-AlignAlytics/dimple/blob/master/src/objects/axis/methods/addGroupOrderRule.js
+* http://dimplejs.org/advanced_examples_viewer.html?id=advanced_storyboard_control
 
-https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple#filterData
+* https://github.com/PMSI-AlignAlytics/dimple/blob/master/src/objects/axis/methods/addGroupOrderRule.js
 
-https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#addOrderRule
+* https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple#filterData
 
-https://www.fool.com/knowledge-center/annualized-return-vs-cumulative-return.aspx
+* https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#addOrderRule
 
-http://www.investinganswers.com/financial-dictionary/bonds/effective-yield-1013
+* https://www.fool.com/knowledge-center/annualized-return-vs-cumulative-return.aspx
 
-http://stackoverflow.com/questions/19437701/how-to-calculate-any-negative-number-to-the-power-of-some-fraction-in-r
+* http://www.investinganswers.com/financial-dictionary/bonds/effective-yield-1013
 
-https://discussions.udacity.com/t/annualized-return-measure/161846/3
+* http://stackoverflow.com/questions/19437701/how-to-calculate-any-negative-number-to-the-power-of-some-fraction-in-r
 
-http://stackoverflow.com/questions/24459752/can-dplyr-package-be-used-for-conditional-mutating
+* https://discussions.udacity.com/t/annualized-return-measure/161846/3
 
-https://discussions.udacity.com/t/prosper-loan-definitions-calculating-investor-return/35762/4
+* http://stackoverflow.com/questions/24459752/can-dplyr-package-be-used-for-conditional-mutating
+
+* https://discussions.udacity.com/t/prosper-loan-definitions-calculating-investor-return/35762/4
