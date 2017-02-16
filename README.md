@@ -29,6 +29,15 @@ Feedback #1 Design Changes:
 * Placed words in graph to show above the line the actual return was higher than the estimated return and visa versa.
 * Increase size of fonts and chart for easier viewing
 
+Review #2 Design Changes:
+* Added footnote that bubble size equals total amount of loans for specific credit rating
+* Changed to Prosper Loan Rating to Prosper Loan Credit Rating for Legend Title
+* Made title left justified
+* Put box around two legends
+* Changed main chart title to "Actual vs. Estimate Median Returns According To Prosper Loan Credit Rating"
+* Added open line before "Bar size equates to total yearly loans" in legend title
+* Deleted "Above 1:1 dashed line" and "Below 1:1 dashed line"
+
 
 
 ##Feedback:
@@ -39,6 +48,16 @@ Review #1 Feedback:
 * Change order of prosper loan ratings from best to worst
 * Add a comment that the loans included in the plot are only those with proser loan ratings and estimated returns.
 * Place words in graph to show above the line the actual return was higher than the estimated return and visa versa.
+
+Review #2 Feedback:
+* Please add footnote that bubble size equals total amount of loans for specific credit rating
+* Change to Prosper Loan Rating to Prosper Loan Credit Rating for Legend Title
+* Make title left justified
+* Put box around two legends
+* Change main chart title to "Actual vs. Estimate Median Returns According To Prosper Loan Credit Rating"
+* Add open line before "Bar size equates to total yearly loans" in legend title
+* Change so starts from top to bottom 2009 - 2013
+* Delete "Above 1:1 dashed line" and "Below 1:1 dashed line"
 
 
 
