@@ -31,6 +31,7 @@ Loans <- read.csv('prosperLoanData.csv', header = T, check.names = F,
 ```
 
 ```{r}
+Loans$ListingCreationDateYear <- year(Loans$ListingCreationDate)
 Loans_Actual_Return <- Loans %>%
                           mutate(Rc_Complete = (LP_CustomerPayments - LoanOriginalAmount - LP_ServiceFees)/LoanOriginalAmount)%>%
                           mutate(Rc_Incomplete = (LP_CustomerPayments + LP_NonPrincipalRecoverypayments - LP_ServiceFees - LP_CollectionFees - LoanOriginalAmount - LP_NetPrincipalLoss)/LoanOriginalAmount)%>%
@@ -47,5 +48,11 @@ Loans_Actual_Return_Grouped <- Loans_Actual_Return%>%
                                     group_by(ListingCreationDateYear, ProsperRating.Alpha)%>%
                                     summarise(Total_Amount_of_Loans = n(), Median_Estimated_Return = median(EstimatedReturn), Median_Actual_Return = median(ActualReturn))
 
-write.csv(Loans_Actual_Return_Grouped, "Prosper_Loans_Actual_Return_2.csv")
+Loans_Actual_Return_Grouped$'ProsperRating_Alpha' <- Loans_Actual_Return_Grouped$ProsperRating.Alpha
+
+
+
+                                
+
+write.csv(Loans_Actual_Return_Grouped, "Prosper_Loans_Actual_Retur.csv")
 ```
